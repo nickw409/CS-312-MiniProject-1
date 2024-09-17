@@ -18,9 +18,10 @@ app.post("/create", (req, res) => {
       name: req.body["name"],
       title: req.body["title"],
       postText: req.body["postText"],
+      date: new Date().toLocaleString(),
    };
    blogPosts.push(post);
-   console.log(`Name: ${post.name}\nTitle: ${post.title}\nPost Text: ${post.postText}`);
+   console.log(`Name: ${post.name}\nTitle: ${post.title}\nPost Text: ${post.postText}\nDate: ${post.date}`);
    res.redirect("/");
 });
 
